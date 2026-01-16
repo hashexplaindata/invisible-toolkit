@@ -1,5 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { Eye, Brain, Zap, Waves, ArrowRight, Shield, Bookmark } from 'lucide-react';
+import EmailCapture from '@/components/EmailCapture';
+import ShareButtons from '@/components/ShareButtons';
 
 const modules = [
   {
@@ -246,6 +250,36 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Signup */}
+      <section className="glass-card" style={{ padding: '2rem', marginTop: '2rem', textAlign: 'center' }}>
+        <h3 style={{
+          fontSize: '1.25rem',
+          fontWeight: 600,
+          color: 'var(--color-text-primary)',
+          margin: '0 0 0.5rem',
+        }}>
+          Get Early Access to Premium Content
+        </h3>
+        <p style={{
+          color: 'var(--color-text-secondary)',
+          marginBottom: '1.5rem',
+          maxWidth: '500px',
+          margin: '0 auto 1.5rem',
+        }}>
+          Be the first to access advanced techniques, exclusive patterns, and NLP insights.
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
+          <Link href="/workspace" className="btn btn-primary">
+            Join 500+ Practitioners
+            <ArrowRight size={18} />
+          </Link>
+          <ShareButtons />
+        </div>
+      </section>
+
+      {/* Email Capture Modal (scroll-triggered) */}
+      <EmailCapture trigger="scroll" scrollThreshold={60} />
     </div>
   );
 }
