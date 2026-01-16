@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X, Compass } from 'lucide-react';
+import UserMenu from './UserMenu';
 
 const navItems = [
     { href: '/', label: 'Home' },
@@ -89,6 +90,10 @@ export default function Navigation() {
                             </Link>
                         );
                     })}
+
+                    <div style={{ marginLeft: '0.5rem', borderLeft: '1px solid var(--color-border)', paddingLeft: '1rem' }}>
+                        <UserMenu />
+                    </div>
                 </div>
 
                 {/* Mobile Menu Button */}
